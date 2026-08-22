@@ -1,0 +1,1027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="th"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;แฟ้มสะสมผลงาน (e-Portfolio) ครูผู้ช่วย - จิตรภาณุ ศรีหวัง&lt;/title&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Lucide Icons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/lucide@latest"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Quill Rich Text Editor --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.quilljs.com/1.3.6/quill.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- AOS Animations --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind Configuration --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tailwind.config = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extend: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>fontFamily: { sans: ['Kanit', 'sans-serif'], },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>colors: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brand: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>primary: '#2563EB', // Blue 600</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>secondary: '#10B981', // Emerald 500</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>accent: '#F59E0B', // Amber 500</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>dark: '#0F172A', // Slate 900</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>light: '#F8FAFC', // Slate 50</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>boxShadow: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'glow-blue': '0 0 20px rgba(37, 99, 235, 0.4)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'glow-green': '0 0 20px rgba(16, 185, 129, 0.4)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { background-color: #F8FAFC; font-family: 'Kanit', sans-serif; scroll-behavior: smooth; color: #1E293B; overflow-x: hidden; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Modern Glassmorphism Nav */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(241, 245, 249, 1); box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-card { background: rgba(255, 255, 255, 1); border: 1px solid rgba(226, 232, 240, 1); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05); }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Animated Background Shapes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bg-shape { position: absolute; filter: blur(80px); z-index: -1; opacity: 0.6; animation: float 15s infinite ease-in-out alternate; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.shape-1 { top: -5%; left: -10%; width: 50vw; height: 50vw; background: #DBEAFE; }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.shape-2 { top: 30%; right: -10%; width: 45vw; height: 45vw; background: #E0F2FE; animation-delay: -5s; }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.shape-3 { bottom: -10%; left: 20%; width: 45vw; height: 45vw; background: #FEF3C7; animation-delay: -10s; }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes float {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: translate(0, 0) scale(1) rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: translate(5%, 10%) scale(1.1) rotate(10deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: translate(-5%, 5%) scale(0.9) rotate(-10deg); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* View Section Animations */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.view-section { min-height: calc(100vh - 5rem); padding-top: 5rem; position: relative; z-index: 10; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#presentation-view { padding-top: 0 !important; top: 5rem; height: calc(100vh - 5rem); min-height: auto; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Modern Scrollbar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar { width: 8px; height: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track { background: transparent; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover { background: #94A3B8; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Blob Shape for Image */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.blob-profile {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: morph 9s ease-in-out infinite;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0284C7 0%, #2563EB 50%, #0D9488 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.blob-inner {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: morph 9s ease-in-out infinite reverse;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #F1F5F9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex; align-items: center; justify-content: center; overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes morph {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* === จัดระเบียบ Rich Text === */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text { font-size: 1.125rem; line-height: 1.8; color: #334155; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text h1 { font-size: 2.25rem; font-weight: 800; margin-top: 2rem; margin-bottom: 1rem; color: #0F172A; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text h2 { font-size: 1.875rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1E293B; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text h3 { font-size: 1.5rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 1rem; color: #334155; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text p { margin-bottom: 1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text blockquote { border-left: 4px solid #E2E8F0; padding-left: 1rem; font-style: italic; color: #64748B; margin-bottom: 1.25rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.rich-text img { max-width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 1rem; margin: 2rem auto; display: block; boxShadow: 0 10px 25px -5px rgba(0,0,0,0.1); }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Presentation Layout &amp; Utilities */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pres-scroll::-webkit-scrollbar { width: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pres-scroll::-webkit-scrollbar-track { background: transparent; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pres-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pres-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.aspect-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.aspect-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="text-brand-dark"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Background Animated Shapes --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="fixed inset-0 overflow-hidden pointer-events-none z-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-shape shape-1"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-shape shape-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-shape shape-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ==================== Navigation Bar ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="fixed w-full z-50 glass-nav h-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center h-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Logo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center gap-3 cursor-pointer group shrink-0" onclick="switchView('home')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gradient-to-br from-blue-600 to-indigo-600 p-2.5 rounded-xl text-white shadow-md group-hover:shadow-glow-blue transition-all duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="book-open" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="font-extrabold text-2xl text-slate-800 hidden sm:block tracking-tight"&gt;KruPortfolio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Menu Items --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto whitespace-nowrap px-2 no-scrollbar flex-1 justify-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="switchView('home')" class="nav-btn active relative px-4 py-2 text-brand-primary bg-blue-50 font-bold rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all"&gt;หน้าหลัก&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="switchView('profile')" class="nav-btn relative px-4 py-2 text-slate-500 font-bold rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all"&gt;แนะนำตัว&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="switchView('workload')" class="nav-btn relative px-4 py-2 text-slate-500 font-bold rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all"&gt;ภาระงาน&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="switchView('evaluation')" class="nav-btn relative px-4 py-2 text-slate-500 font-bold rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all"&gt;การประเมิน&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="switchView('portfolio')" class="nav-btn relative px-4 py-2 text-slate-500 font-bold rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all"&gt;ผลงาน&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Admin Button --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="switchView('admin')" class="shrink-0 ml-2 bg-slate-800 text-white p-2.5 rounded-full hover:bg-slate-700 shadow-md transition-all hover:scale-105" title="ระบบจัดการ"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="settings" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Global Loader --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="global-loader" class="fixed inset-0 bg-white/90 backdrop-blur-md z-[100] flex flex-col items-center justify-center hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="relative w-20 h-20 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute inset-0 border-4 border-blue-100 rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute inset-0 border-4 border-brand-primary rounded-full border-t-transparent animate-spin"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-brand-primary font-bold text-xl tracking-wide" id="loader-text"&gt;กำลังโหลดข้อมูล...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main Content Container --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="main-view-container" class="relative z-10 transition-opacity duration-300"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== 1. หน้าหลัก (Home) ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- สังเกตว่าเราใช้ class 'flex' สำหรับหน้าแรก และเอา 'hidden' ออก --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="home-view" class="view-section flex items-center pb-12 pt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Text Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex-1 text-center lg:text-left max-w-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p data-aos="fade-right" data-aos-delay="100" class="text-xl md:text-2xl text-slate-600 font-bold mb-3 tracking-wide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>การเตรียมความพร้อมและพัฒนาอย่างเข้ม</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h1 data-aos="fade-right" data-aos-delay="200" class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>นายจิตรภาณุ ศรีหวัง</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 data-aos="fade-right" data-aos-delay="300" class="text-2xl md:text-3xl text-emerald-600 font-extrabold mb-8 flex items-center justify-center lg:justify-start gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ตำแหน่ง ครูผู้ช่วย</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div data-aos="fade-up" data-aos-delay="400" class="bg-white/95 backdrop-blur-md p-6 sm:p-7 rounded-3xl shadow-soft w-full mb-8 border border-slate-100 border-l-[6px] border-l-blue-600 text-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-4 mb-4 text-base sm:text-lg font-bold text-slate-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-slate-100 p-2.5 rounded-xl text-slate-700 flex items-center justify-center shrink-0"&gt;&lt;i data-lucide="school" class="w-5 h-5"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span&gt;โรงเรียนมหาวชิราวุธ จังหวัดสงขลา&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-4 text-sm sm:text-base text-slate-600 font-semibold"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-slate-100 p-2.5 rounded-xl text-slate-700 flex items-center justify-center shrink-0"&gt;&lt;i data-lucide="map-pin" class="w-5 h-5"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span&gt;สำนักงานเขตพื้นที่การศึกษามัธยมศึกษาสงขลา สตูล&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div data-aos="fade-up" data-aos-delay="500" class="flex flex-wrap items-center justify-center lg:justify-start gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="switchView('profile')" class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-xl hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-3 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span&gt;ยินดีต้อนรับคณะกรรมการ&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center group-hover:translate-x-1 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-4 h-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="switchView('evaluation')" class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold text-base md:text-lg hover:border-slate-400 hover:text-slate-900 transition-all duration-300 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>ดูเกณฑ์ประเมิน</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Hero Image / Blob --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex-1 relative flex items-center justify-center w-full max-w-md lg:max-w-lg" data-aos="zoom-in" data-aos-duration="1000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-80 h-80 sm:w-96 sm:h-96 md:w-[460px] md:h-[460px] blob-profile relative shadow-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="blob-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-full h-full bg-slate-100/90 flex flex-col items-center justify-center text-slate-400 p-6 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="image" class="w-20 h-20 mb-3 opacity-60 text-slate-400"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;span class="font-bold text-slate-500 text-base"&gt;รูปโปรไฟล์ (ตั้งค่าในแอดมินได้)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute left-0 sm:-left-4 bottom-1/4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center animate-bounce z-20" style="animation-duration: 4.5s;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="graduation-cap" class="w-8 h-8 text-emerald-500"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute -right-2 sm:-right-4 top-1/4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center animate-bounce z-20" style="animation-duration: 5s; animation-delay: 1s;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="book-open" class="w-8 h-8 text-blue-600"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== 2. แนะนำตัว (Profile) ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- สังเกตคลาส hidden ถูกเพิ่มเข้ามาเพื่อซ่อนหน้านี้เป็นค่าเริ่มต้น --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="profile-view" class="view-section hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-5xl mx-auto px-4 pb-20 pt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-flex items-center justify-center p-4 bg-blue-100 rounded-full mb-4 text-blue-600 shadow-sm"&gt;&lt;i data-lucide="user" class="w-10 h-10"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-4xl font-extrabold text-slate-800 tracking-tight"&gt;ประวัติส่วนตัว&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-20 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card rounded-[2rem] p-8 md:p-14 border-t-8 border-t-blue-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="profile-content" class="rich-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-center py-10"&gt;&lt;i data-lucide="loader-2" class="animate-spin w-10 h-10 text-gray-300"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== 3. ภาระงาน (Workload) ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="workload-view" class="view-section hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-5xl mx-auto px-4 pb-20 pt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-flex items-center justify-center p-4 bg-emerald-100 rounded-full mb-4 text-emerald-600 shadow-sm"&gt;&lt;i data-lucide="briefcase" class="w-10 h-10"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-4xl font-extrabold text-slate-800 tracking-tight"&gt;ภาระงานที่รับผิดชอบ&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-20 h-1.5 bg-emerald-500 mx-auto mt-6 rounded-full"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card rounded-[2rem] p-8 md:p-14 border-t-8 border-t-emerald-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="workload-content" class="rich-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-center py-10"&gt;&lt;i data-lucide="loader-2" class="animate-spin w-10 h-10 text-gray-300"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== 4. องค์ประกอบการประเมิน (Evaluation Main) ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="evaluation-view" class="view-section hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-6xl mx-auto px-4 pb-20 pt-10 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6 tracking-tight"&gt;องค์ประกอบการประเมิน&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-slate-600 text-lg mb-16 max-w-2xl mx-auto bg-white/70 backdrop-blur px-8 py-3 rounded-full border border-slate-200 shadow-sm font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>การเตรียมความพร้อมและพัฒนาอย่างเข้ม ตำแหน่งครูผู้ช่วย</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- ด้านที่ 1 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div onclick="openPresentation('ด้านที่ 1 การปฏิบัติตน')" class="group cursor-pointer bg-gradient-to-br from-emerald-500 to-green-700 rounded-[2.5rem] p-1.5 shadow-xl hover:shadow-glow-green hover:-translate-y-3 transition-all duration-500 text-left relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-y-1/2 translate-x-1/3 group-hover:scale-150 transition-transform duration-700"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-slate-900/40 backdrop-blur-sm rounded-[2.2rem] p-10 h-full flex flex-col justify-between border border-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-20 h-20 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center text-white mb-8 shadow-inner group-hover:rotate-12 transition-transform duration-500 border border-white/30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="user-check" class="w-10 h-10"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-emerald-100 font-bold text-xl mb-2 tracking-wide"&gt;องค์ประกอบที่ 1&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-3xl text-white font-extrabold mb-6 leading-tight"&gt;ด้านการปฏิบัติตน &lt;br&gt;&lt;span class="text-lg font-medium opacity-80 mt-1 block"&gt;(คุณลักษณะส่วนบุคคล)&lt;/span&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-8 flex items-center justify-between border-t border-white/20 pt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="text-white font-bold text-lg"&gt;เปิดดูผลการประเมิน&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-12 h-12 bg-white text-emerald-600 rounded-full flex items-center justify-center shadow-lg group-hover:translate-x-2 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- ด้านที่ 2 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div onclick="openPresentation('ด้านที่ 2 การปฏิบัติงาน')" class="group cursor-pointer bg-gradient-to-br from-blue-600 to-indigo-800 rounded-[2.5rem] p-1.5 shadow-xl hover:shadow-glow-blue hover:-translate-y-3 transition-all duration-500 text-left relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-y-1/2 translate-x-1/3 group-hover:scale-150 transition-transform duration-700"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-slate-900/40 backdrop-blur-sm rounded-[2.2rem] p-10 h-full flex flex-col justify-between border border-white/10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-20 h-20 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center text-white mb-8 shadow-inner group-hover:rotate-12 transition-transform duration-500 border border-white/30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="laptop-minimal" class="w-10 h-10"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-blue-200 font-bold text-xl mb-2 tracking-wide"&gt;องค์ประกอบที่ 2&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-3xl text-white font-extrabold mb-6 leading-tight"&gt;ด้านการปฏิบัติงาน &lt;br&gt;&lt;span class="text-lg font-medium opacity-80 mt-1 block"&gt;(วิชาชีพครู)&lt;/span&gt;&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mt-8 flex items-center justify-between border-t border-white/20 pt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="text-white font-bold text-lg"&gt;เปิดดูผลการประเมิน&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-12 h-12 bg-white text-blue-700 rounded-full flex items-center justify-center shadow-lg group-hover:translate-x-2 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="arrow-right" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== 5 &amp; 6. โหมดนำเสนอ (Presentation Mode) ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="presentation-view" class="view-section hidden fixed left-0 right-0 z-40 bg-slate-900 !p-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="pres-sidebar-container" class="w-80 bg-slate-900 border-r border-slate-800 flex flex-col shrink-0 transition-all duration-300 z-10 shadow-2xl hidden md:flex"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-6 border-b border-slate-800 flex flex-col gap-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-xs font-bold text-emerald-400 flex items-center gap-2"&gt;&lt;i data-lucide="list-tree" class="w-4 h-4"&gt;&lt;/i&gt; หัวข้อการประเมิน&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="pres-title" class="text-white font-extrabold text-base truncate"&gt;หมวดหมู่การประเมิน&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="pres-sidebar" class="flex-1 overflow-y-auto pres-scroll p-4 space-y-2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex-1 relative flex flex-col overflow-hidden bg-slate-950"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="absolute top-4 right-4 z-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="closePresentation()" class="bg-slate-800/80 backdrop-blur text-slate-300 hover:text-white px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 border border-slate-700 shadow-lg hover:bg-red-500 hover:border-red-500 transition-all duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="x" class="w-4 h-4"&gt;&lt;/i&gt; ปิดหน้านำเสนอ</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="pres-slide-container" class="flex-1 overflow-y-auto p-6 md:p-12 lg:p-16 pres-scroll flex flex-col items-center"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-slate-900 border-t border-slate-800 p-4 md:p-6 flex justify-between items-center shrink-0 z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="presPrev()" id="btn-pres-prev" class="group flex items-center gap-2 px-5 py-3 bg-slate-800 text-slate-300 rounded-xl hover:bg-slate-700 hover:text-white font-bold transition disabled:opacity-30 disabled:cursor-not-allowed border border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"&gt;&lt;/i&gt; ย้อนกลับ</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button onclick="togglePresSidebar()" class="md:hidden p-3 bg-slate-800 rounded-xl text-slate-300 hover:text-white border border-slate-700"&gt;&lt;i data-lucide="menu" class="w-5 h-5"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span id="pres-counter" class="text-sm md:text-base font-bold text-slate-400"&gt;สไลด์ 1 จาก 1&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="presNext()" id="btn-pres-next" class="group flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-500 font-bold transition disabled:opacity-30 disabled:cursor-not-allowed shadow-md shadow-blue-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>หน้าถัดไป &lt;i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== 7. ผลงานรวม (Portfolio Grid) ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="portfolio-view" class="view-section hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto px-4 pb-20 pt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-flex items-center justify-center p-4 bg-amber-100 rounded-full mb-4 shadow-sm text-amber-600"&gt;&lt;i data-lucide="star" class="w-10 h-10"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-4xl font-extrabold text-slate-800 mb-4 tracking-tight"&gt;คลังผลงานและสื่อการสอน&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full mb-6"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-500 text-lg max-w-2xl mx-auto font-medium"&gt;รวมผลงาน ภาพกิจกรรม เอกสารประกอบ และสื่อวิดีโอ ที่แสดงถึงศักยภาพและการปฏิบัติหน้าที่อย่างเต็มความสามารถ&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ==================== ADMIN SYSTEM ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ระบบผู้ดูแลระบบ ซ่อนไว้เป็นค่าเริ่มต้น --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;main id="admin-view" class="view-section hidden pt-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="max-w-7xl mx-auto px-4 pb-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card rounded-[2rem] p-8 md:p-10 border-t-8 border-slate-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 border-b border-gray-100 pb-8 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="inline-flex items-center gap-2 bg-slate-800 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="lock" class="w-4 h-4"&gt;&lt;/i&gt; โหมดผู้ดูแลระบบ</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-3xl font-extrabold text-slate-800 flex items-center gap-3 tracking-tight"&gt;ระบบจัดการข้อมูลเว็บไซต์&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-slate-500 mt-2 font-medium"&gt;อัปเดตข้อมูลแบบเรียลไทม์ บันทึกลง Google Sheet อัตโนมัติ&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar bg-slate-50 p-2 rounded-2xl border border-slate-200 shadow-inner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="switchAdminTab('general', this)" class="admin-tab-btn active px-6 py-3 bg-white text-brand-primary font-bold rounded-xl shadow-sm text-sm whitespace-nowrap transition-all border border-slate-200"&gt;ข้อมูลทั่วไป&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="switchAdminTab('eval', this)" class="admin-tab-btn px-6 py-3 bg-transparent text-slate-500 hover:text-slate-800 font-bold rounded-xl text-sm whitespace-nowrap transition-all border border-transparent"&gt;ข้อมูลประเมิน (สไลด์)&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="switchAdminTab('works', this)" class="admin-tab-btn px-6 py-3 bg-transparent text-slate-500 hover:text-slate-800 font-bold rounded-xl text-sm whitespace-nowrap transition-all border border-transparent"&gt;ผลงาน (การ์ด)&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Tab 1: ข้อมูลทั่วไป --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="admin-tab-general" class="admin-tab-content block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-xl font-bold text-blue-700 mb-6 flex items-center gap-2"&gt;&lt;i data-lucide="user" class="w-6 h-6"&gt;&lt;/i&gt; แก้ไขหน้า "แนะนำตัว"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div id="editor-profile" class="h-80"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button onclick="saveGeneralData('profile')" class="mt-6 w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-xl hover:bg-blue-700 transition flex justify-center items-center gap-2 shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="save" class="w-5 h-5"&gt;&lt;/i&gt; บันทึกประวัติส่วนตัว</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-emerald-50/50 p-8 rounded-3xl border border-emerald-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-xl font-bold text-emerald-700 mb-6 flex items-center gap-2"&gt;&lt;i data-lucide="briefcase" class="w-6 h-6"&gt;&lt;/i&gt; แก้ไขหน้า "ภาระงาน"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div id="editor-workload" class="h-80"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;button onclick="saveGeneralData('workload')" class="mt-6 w-full py-4 bg-emerald-600 text-white font-bold text-lg rounded-xl hover:bg-emerald-700 transition flex justify-center items-center gap-2 shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;i data-lucide="save" class="w-5 h-5"&gt;&lt;/i&gt; บันทึกภาระงาน</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Tab 2: ข้อมูลประเมิน --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="admin-tab-eval" class="admin-tab-content hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 bg-slate-50 p-6 rounded-2xl border border-slate-200 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-slate-700 max-w-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-lg mb-1 flex items-center gap-2"&gt;&lt;i data-lucide="presentation" class="w-5 h-5 text-brand-primary"&gt;&lt;/i&gt; จัดการสไลด์นำเสนอ&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm font-medium text-slate-500"&gt;สร้างหัวข้อและเนื้อหาสำหรับโหมดนำเสนอ (ใส่รูปหรือจัดรูปแบบในกล่องข้อความได้เลย)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="openEvalForm()" class="shrink-0 bg-brand-primary text-white px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 shadow-md hover:bg-blue-700 transition w-full sm:w-auto justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="plus-circle" class="w-5 h-5"&gt;&lt;/i&gt; สร้างสไลด์ใหม่</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;table class="w-full text-left border-collapse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;thead class="bg-slate-100 border-b border-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;th class="p-5 font-bold text-slate-700 w-36 whitespace-nowrap"&gt;หมวดหมู่&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;th class="p-5 font-bold text-slate-700 w-64 min-w-[200px]"&gt;หัวข้อสไลด์ (อิงตามเลข)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;th class="p-5 font-bold text-slate-700"&gt;เนื้อหาอย่างย่อ&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                            </span>&lt;th class="p-5 font-bold text-slate-700 text-center w-32"&gt;จัดการ&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;tbody id="admin-eval-list" class="divide-y divide-gray-100"&gt;&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Tab 3: ผลงานรวม --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="admin-tab-works" class="admin-tab-content hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="font-bold text-slate-800 text-lg flex items-center gap-2"&gt;&lt;i data-lucide="gallery-horizontal" class="w-5 h-5 text-amber-500"&gt;&lt;/i&gt; จัดการคลังผลงาน&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm text-slate-500 mt-1 font-medium"&gt;ผลงานเหล่านี้จะไปโชว์ที่หน้า "ผลงาน" ในรูปแบบการ์ด&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="openWorkForm()" class="bg-slate-800 text-white px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 shadow-md hover:bg-slate-900 transition w-full sm:w-auto justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="plus" class="w-5 h-5"&gt;&lt;/i&gt; เพิ่มผลงานชิ้นใหม่</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="admin-works-grid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ==================== MODALS ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Eval Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="eval-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-[200] hidden flex-col items-center justify-center p-4 transition-opacity duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white w-full max-w-5xl rounded-[2rem] shadow-2xl flex flex-col max-h-[90vh] scale-95 opacity-0 transition-all duration-300" id="eval-modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 md:p-8 border-b border-gray-100 flex justify-between items-center bg-slate-50 rounded-t-[2rem]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-extrabold text-slate-800 flex items-center gap-3" id="eval-modal-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-lg shadow-sm text-brand-primary border border-gray-200"&gt;&lt;i data-lucide="edit-3" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt; แก้ไขสไลด์นำเสนอ</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('eval-modal')" class="p-3 bg-white border border-gray-200 hover:bg-red-50 text-gray-500 hover:text-red-500 rounded-full transition-colors shadow-sm"&gt;&lt;i data-lucide="x" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 md:p-8 overflow-y-auto flex-1 space-y-8 pres-scroll"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="hidden" id="eval-id"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-slate-50 p-6 rounded-2xl border border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="md:col-span-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-sm font-bold text-slate-700 mb-2"&gt;เลือกด้าน (หมวดหลัก)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;select id="eval-category" class="w-full p-4 border border-gray-200 bg-white shadow-sm rounded-xl focus:border-brand-primary focus:ring-2 focus:ring-blue-100 outline-none transition font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="ด้านที่ 1 การปฏิบัติตน"&gt;ด้านที่ 1 การปฏิบัติตน&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="ด้านที่ 2 การปฏิบัติงาน"&gt;ด้านที่ 2 การปฏิบัติงาน&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="md:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-sm font-bold text-slate-700 mb-2"&gt;ชื่อหัวข้อสไลด์&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="text" id="eval-title" class="w-full p-4 border border-gray-200 bg-white shadow-sm rounded-xl focus:border-brand-primary focus:ring-2 focus:ring-blue-100 outline-none transition font-medium" placeholder="เช่น 1.1 วินัย คุณธรรม จริยธรรม..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-blue-600 mt-2 font-medium"&gt;&lt;i data-lucide="info" class="w-3 h-3 inline"&gt;&lt;/i&gt; ใส่เลขข้อนำหน้า เพื่อให้ระบบเรียงลำดับสไลด์ได้ถูกต้อง&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-bold text-slate-700 mb-2 flex items-center gap-2"&gt;&lt;i data-lucide="layout-template" class="w-4 h-4 text-brand-primary"&gt;&lt;/i&gt; เนื้อหาในสไลด์&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="border-2 border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm focus-within:border-brand-primary transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="editor-eval" class="h-[400px]"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 md:p-8 border-t border-gray-100 flex justify-end gap-4 bg-slate-50 rounded-b-[2rem]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('eval-modal')" class="px-8 py-3.5 bg-white border border-gray-300 text-slate-700 font-bold rounded-xl hover:bg-gray-100 transition shadow-sm"&gt;ยกเลิก&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="saveEvalData()" class="px-8 py-3.5 bg-brand-primary text-white font-bold text-lg rounded-xl hover:bg-blue-700 transition flex items-center gap-2 shadow-md hover:shadow-lg"&gt;&lt;i data-lucide="save" class="w-5 h-5"&gt;&lt;/i&gt; บันทึกข้อมูลสไลด์&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Work Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="work-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-[200] hidden flex-col items-center justify-center p-4 transition-opacity duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl flex flex-col max-h-[90vh] scale-95 opacity-0 transition-all duration-300" id="work-modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 md:p-8 border-b border-gray-100 flex justify-between items-center bg-slate-50 rounded-t-[2rem]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-extrabold text-slate-800 flex items-center gap-3" id="work-modal-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-2 rounded-lg shadow-sm text-amber-500 border border-gray-200"&gt;&lt;i data-lucide="bookmark-plus" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt; เพิ่มผลงาน</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('work-modal')" class="p-3 bg-white border border-gray-200 hover:bg-red-50 text-gray-500 hover:text-red-500 rounded-full transition-colors shadow-sm"&gt;&lt;i data-lucide="x" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 md:p-8 overflow-y-auto flex-1 space-y-6 pres-scroll bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="hidden" id="work-id"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-bold text-slate-700 mb-2"&gt;ชื่อผลงาน / สื่อการสอน&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="work-title" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-50 outline-none transition font-medium" placeholder="ระบุชื่อผลงานที่โดดเด่น"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-sm font-bold text-slate-700 mb-2"&gt;คำอธิบายสั้นๆ&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;textarea id="work-desc" rows="3" class="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-amber-400 focus:ring-2 focus:ring-amber-50 outline-none transition font-medium text-slate-600" placeholder="สรุปสั้นๆ ว่าผลงานชิ้นนี้คืออะไร ใช้ทำอะไร..."&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-amber-50/50 p-6 rounded-2xl border border-amber-100 space-y-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-base font-bold text-amber-900 flex items-center gap-2"&gt;&lt;i data-lucide="link" class="w-5 h-5"&gt;&lt;/i&gt; แนบลิงก์สื่อ (ใส่เฉพาะที่ต้องการแสดง)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-xs font-bold text-slate-600 mb-1.5 flex items-center gap-1"&gt;&lt;i data-lucide="image" class="w-3 h-3"&gt;&lt;/i&gt; URL รูปภาพหน้าปก&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="text" id="work-img" placeholder="https://..." class="w-full p-3 border border-gray-200 shadow-sm rounded-lg text-sm focus:border-amber-400 outline-none bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-xs font-bold text-slate-600 mb-1.5 flex items-center gap-1"&gt;&lt;i data-lucide="file-text" class="w-3 h-3 text-red-500"&gt;&lt;/i&gt; URL ไฟล์ PDF&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="work-pdf" placeholder="Google Drive URL" class="w-full p-3 border border-gray-200 shadow-sm rounded-lg text-sm focus:border-amber-400 outline-none bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-xs font-bold text-slate-600 mb-1.5 flex items-center gap-1"&gt;&lt;i data-lucide="youtube" class="w-3 h-3 text-red-500"&gt;&lt;/i&gt; URL วิดีโอ (YouTube)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="work-vid" placeholder="YouTube URL" class="w-full p-3 border border-gray-200 shadow-sm rounded-lg text-sm focus:border-amber-400 outline-none bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="p-6 md:p-8 border-t border-gray-100 flex justify-end gap-4 bg-slate-50 rounded-b-[2rem]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal('work-modal')" class="px-8 py-3.5 bg-white border border-gray-300 text-slate-700 font-bold rounded-xl hover:bg-gray-100 transition shadow-sm"&gt;ยกเลิก&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="saveWorkData()" class="px-8 py-3.5 bg-slate-800 text-white font-bold text-lg rounded-xl hover:bg-slate-900 transition flex items-center gap-2 shadow-md hover:shadow-lg"&gt;&lt;i data-lucide="save" class="w-5 h-5"&gt;&lt;/i&gt; บันทึกลงคลังผลงาน&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ==================== SCRIPTS ==================== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// เริ่มต้นการใช้งานไอคอน และ แอนิเมชัน</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 20 });</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ตั้งค่ากล่องแก้ไขข้อความ (Quill Editor)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const quillConfig = {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: 'snow',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>modules: {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>toolbar: [<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>[{ 'header': [1, 2, 3, false] }],<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>['bold', 'italic', 'underline', 'strike'],<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>[{ 'list': 'ordered'}, { 'list': 'bullet' }],<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>['link', 'image', 'video'],<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>[{ 'color': [] }, { 'background': [] }],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>['clean'], [{ 'align': [] }]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>placeholder: 'จัดรูปแบบข้อความ วางรูปภาพ หรือตารางได้ที่นี่...'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const quillProfile = new Quill('#editor-profile', quillConfig);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const quillWorkload = new Quill('#editor-workload', quillConfig);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const quillEval = new Quill('#editor-eval', quillConfig);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let gData = { profile: '', workload: '' };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let evalData = [];<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let worksData = [];<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentPresSlides = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentSlideIndex = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ระบบสลับหน้าเว็บ (Navigation) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ปรับปรุงใหม่ให้ทำงานกับ Tailwind CSS (hidden) ได้อย่างสมบูรณ์แบบ</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function switchView(viewId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('main-view-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!container) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// หากกดเมนูอื่นขณะเปิดโหมดนำเสนออยู่ ให้ปิดโหมดนำเสนอก่อน</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const presView = document.getElementById('presentation-view');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (presView &amp;&amp; !presView.classList.contains('hidden')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closePresentation();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (viewId === 'evaluation') return; // ถ้ากดปุ่ม 'การประเมิน' ให้หยุดแค่นี้เพราะเดี๋ยวจะโหลดซ้อน</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// อัปเดตสีปุ่ม Navbar ด้านบน</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.nav-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const onclickAttr = btn.getAttribute('onclick') || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (onclickAttr.includes(`'${viewId}'`)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.add('bg-blue-50', 'text-brand-primary');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.remove('text-slate-500');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.remove('bg-blue-50', 'text-brand-primary');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.add('text-slate-500');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// เฟดหน้าจอลง (Fade Out)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.style.opacity = '0';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// ซ่อนทุกหน้าต่าง โดยยัดคลาส hidden ใส่ให้หมด</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.querySelectorAll('.view-section').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.classList.remove('animate-fade-in');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// เปิดเฉพาะหน้าต่างที่ต้องการ (เป้าหมาย) โดยลบคลาส hidden ออก</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const target = document.getElementById(viewId + '-view');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (target &amp;&amp; viewId !== 'presentation') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>target.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>target.classList.add('animate-fade-in'); // เพิ่มแอนิเมชันให้เด้งขึ้นมาเบาๆ</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// เลื่อนหน้าจอกลับไปบนสุด</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try { window.scrollTo({top: 0, behavior: 'smooth'}); } catch(e) { window.scrollTo(0,0); }</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// เฟดหน้าจอกลับมา (Fade In)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.style.opacity = '1';<span class="Apple-converted-space"> </span></p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// รีเฟรชแอนิเมชัน และโหลดไอคอนใหม่</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (typeof AOS !== 'undefined') AOS.refresh();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 50);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 300);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ระบบสลับแท็บในโหมดผู้ดูแลระบบ ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function switchAdminTab(tabId, btnElement) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.admin-tab-content').forEach(el =&gt; el.classList.add('hidden'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('admin-tab-' + tabId).classList.remove('hidden');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.admin-tab-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.className = "admin-tab-btn px-6 py-3 bg-transparent text-slate-500 hover:text-slate-800 font-bold rounded-xl text-sm whitespace-nowrap transition-all border border-transparent";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btnElement.className = "admin-tab-btn active px-6 py-3 bg-white text-brand-primary font-bold rounded-xl shadow-sm text-sm whitespace-nowrap transition-all border border-slate-200";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ฟังก์ชันช่วยเหลือ (Utils) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showLoading(msg = 'กำลังโหลดข้อมูล...') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('loader-text').innerText = msg;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('global-loader').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function hideLoading() { document.getElementById('global-loader').classList.add('hidden'); }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openModal(id) {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modal = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const content = document.getElementById(id + '-content');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.remove('hidden'); modal.classList.add('flex');<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>modal.classList.add('opacity-100');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>content.classList.remove('scale-95', 'opacity-0'); content.classList.add('scale-100', 'opacity-100');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 10);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal(id) {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modal = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const content = document.getElementById(id + '-content');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.remove('opacity-100');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content.classList.remove('scale-100', 'opacity-100'); content.classList.add('scale-95', 'opacity-0');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ระบบติดต่อฐานข้อมูล (Fetch Data) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadAllData() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof google !== 'undefined' &amp;&amp; google.script) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showLoading('กำลังเชื่อมต่อฐานข้อมูล Google Sheets...');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>google.script.run.withSuccessHandler(res =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>hideLoading();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if(res.status === 'error') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>alert("ดึงข้อมูลไม่สำเร็จ: " + res.message);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>gData = res.general || { profile: '', workload: '' };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>evalData = res.evals || [];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>worksData = res.works || [];</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const emptyProfile = '&lt;div class="text-center py-16"&gt;&lt;i data-lucide="user-x" class="w-16 h-16 mx-auto text-slate-200 mb-4"&gt;&lt;/i&gt;&lt;p class="text-slate-400 font-medium text-lg"&gt;ยังไม่มีข้อมูลประวัติส่วนตัว&lt;br&gt;&lt;span class="text-sm"&gt;กรุณาเพิ่มข้อมูลที่เมนูระบบจัดการ&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const emptyWorkload = '&lt;div class="text-center py-16"&gt;&lt;i data-lucide="briefcase" class="w-16 h-16 mx-auto text-slate-200 mb-4"&gt;&lt;/i&gt;&lt;p class="text-slate-400 font-medium text-lg"&gt;ยังไม่มีข้อมูลภาระงาน&lt;br&gt;&lt;span class="text-sm"&gt;กรุณาเพิ่มข้อมูลที่เมนูระบบจัดการ&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;';</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('profile-content').innerHTML = gData.profile ? gData.profile : emptyProfile;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('workload-content').innerHTML = gData.workload ? gData.workload : emptyWorkload;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderPortfolioGrid();</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quillProfile.root.innerHTML = gData.profile || '';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quillWorkload.root.innerHTML = gData.workload || '';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderAdminEvalList();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderAdminWorksGrid();</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; AOS.refresh(), 200);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>}).withFailureHandler(err =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>hideLoading();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>alert("เซิร์ฟเวอร์ Google ตอบสนองผิดพลาด: " + err.message);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}).getAllData();</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// ข้อมูลจำลองเมื่อไม่ได้รันบน Google</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>gData = { profile: '&lt;h3&gt;ข้อมูลจำลองการทดสอบ&lt;/h3&gt;', workload: '&lt;h3&gt;ภาระงานจำลองการทดสอบ&lt;/h3&gt;' };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('profile-content').innerHTML = gData.profile;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('workload-content').innerHTML = gData.workload;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quillProfile.root.innerHTML = gData.profile;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>quillWorkload.root.innerHTML = gData.workload;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 500);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- โหมดนำเสนอสไลด์ (Presentation Mode) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openPresentation(category) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentPresSlides = evalData.filter(item =&gt; item.category === category).sort((a,b) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const matchA = a.title.match(/^(\d+(\.\d+)*)/); const matchB = b.title.match(/^(\d+(\.\d+)*)/);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const numA = matchA ? matchA[1].split('.').map(Number) : []; const numB = matchB ? matchB[1].split('.').map(Number) : [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; Math.max(numA.length, numB.length); i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if ((numA[i] || 0) &lt; (numB[i] || 0)) return -1;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if ((numA[i] || 0) &gt; (numB[i] || 0)) return 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} return 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(currentPresSlides.length === 0) { alert('ยังไม่มีข้อมูลสไลด์ในหมวดหมู่นี้ กรุณาเพิ่มข้อมูลที่เมนูระบบจัดการครับ'); return; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const presTitleEl = document.getElementById('pres-title');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(presTitleEl) presTitleEl.innerText = category;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentSlideIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let sidebarHtml = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentPresSlides.forEach((slide, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>sidebarHtml += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div onclick="goToSlide(${idx})" id="pres-nav-${idx}" class="pres-nav-item cursor-pointer p-4 rounded-xl text-sm transition-all duration-300 border-l-4 ${idx===0 ? 'active border-emerald-400 bg-slate-800 text-white shadow-md' : 'border-transparent text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="line-clamp-2 font-bold"&gt;${slide.title}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('pres-sidebar').innerHTML = sidebarHtml;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateSlideView(true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const presView = document.getElementById('presentation-view');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>presView.classList.remove('hidden'); presView.classList.add('flex');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; presView.classList.add('opacity-100'), 10);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'hidden';<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closePresentation() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const presView = document.getElementById('presentation-view');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>presView.classList.remove('opacity-100');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; { presView.classList.add('hidden'); presView.classList.remove('flex'); document.body.style.overflow = 'auto'; }, 300);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function togglePresSidebar() {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sidebar = document.getElementById('pres-sidebar-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(sidebar.classList.contains('hidden')) { sidebar.classList.remove('hidden'); sidebar.classList.add('flex', 'absolute', 'h-full', 'z-50'); }<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>else { sidebar.classList.add('hidden'); sidebar.classList.remove('flex', 'absolute', 'h-full', 'z-50'); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateSlideView(immediate = false) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const slide = currentPresSlides[currentSlideIndex];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('pres-slide-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!immediate) { container.style.opacity = '0'; container.style.transform = 'scale(0.98)'; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const borderColor = slide.category.includes('1') ? 'bg-emerald-500' : 'bg-blue-500';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-full max-w-5xl bg-white rounded-[2rem] shadow-2xl flex flex-col relative overflow-hidden my-auto min-h-[70vh]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute top-0 left-0 w-full h-4 ${borderColor}"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-8 md:p-12 lg:p-16 flex flex-col flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8 pb-6 border-b border-slate-100 tracking-tight leading-snug"&gt;${slide.title}&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="rich-text flex-1"&gt;${slide.content}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.scrollTo({top: 0, behavior: 'smooth'}); lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(!immediate) { container.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'; container.style.opacity = '1'; container.style.transform = 'scale(1)'; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, immediate ? 0 : 300);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('pres-counter').innerText = `สไลด์ ${currentSlideIndex + 1} จาก ${currentPresSlides.length}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('btn-pres-prev').disabled = currentSlideIndex === 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('btn-pres-next').disabled = currentSlideIndex === currentPresSlides.length - 1;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.pres-nav-item').forEach((el, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.className = idx === currentSlideIndex<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>? "pres-nav-item cursor-pointer p-4 rounded-xl text-sm transition-all duration-300 border-l-4 border-emerald-400 bg-slate-800 text-white font-bold shadow-md"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>: "pres-nav-item cursor-pointer p-4 rounded-xl text-sm transition-all duration-300 border-l-4 border-transparent text-slate-400 hover:bg-slate-800/50 hover:text-slate-200";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const activeNav = document.getElementById(`pres-nav-${currentSlideIndex}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(activeNav) activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function presNext() { if(currentSlideIndex &lt; currentPresSlides.length - 1) { currentSlideIndex++; updateSlideView(); } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function presPrev() { if(currentSlideIndex &gt; 0) { currentSlideIndex--; updateSlideView(); } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function goToSlide(idx) { currentSlideIndex = idx; updateSlideView(); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ระบบวาดการ์ดผลงาน (Portfolio Grid) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderPortfolioGrid() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('portfolio-grid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(worksData.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.innerHTML = `&lt;div class="col-span-full text-center py-20 bg-white rounded-[2rem] border border-dashed border-gray-200"&gt;&lt;i data-lucide="inbox" class="w-16 h-16 mx-auto mb-4 text-slate-200"&gt;&lt;/i&gt;&lt;p class="text-slate-400 font-medium"&gt;ยังไม่มีข้อมูลผลงาน&lt;br&gt;&lt;span class="text-sm"&gt;เพิ่มข้อมูลได้ที่เมนู "ระบบจัดการ"&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lucide.createIcons(); return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let html = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>worksData.forEach((work, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let mediaHtml = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (work.vidUrl &amp;&amp; work.vidUrl.includes('youtube')) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const ytMatch = work.vidUrl.match(/(?:youtu\.be\/|v=)([^&amp;]+)/);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if(ytMatch) mediaHtml = `&lt;div class="aspect-video-container"&gt;&lt;iframe src="https://www.youtube.com/embed/${ytMatch[1]}" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else if (work.imgUrl) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>mediaHtml = `&lt;img src="${work.imgUrl}" class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-105"&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>mediaHtml = `&lt;div class="w-full h-48 bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center text-slate-300"&gt;&lt;i data-lucide="image" class="w-12 h-12"&gt;&lt;/i&gt;&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div data-aos="fade-up" data-aos-delay="${(idx%3) * 150}" class="group bg-white rounded-3xl shadow-soft border border-slate-100 flex flex-col hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="overflow-hidden rounded-t-3xl"&gt;${mediaHtml}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="p-8 flex flex-col flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-extrabold text-slate-800 text-xl mb-3 line-clamp-2 leading-tight group-hover:text-amber-500 transition-colors"&gt;${work.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-base text-slate-500 mb-6 line-clamp-3 flex-1 leading-relaxed font-medium"&gt;${work.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-3 mt-auto pt-5 border-t border-slate-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${work.pdfUrl ? `&lt;a href="${work.pdfUrl}" target="_blank" class="flex-1 text-center py-3 bg-red-50 text-red-600 text-sm font-bold rounded-xl hover:bg-red-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5"&gt;&lt;i data-lucide="file-text" class="w-4 h-4"&gt;&lt;/i&gt; ไฟล์เอกสาร&lt;/a&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${work.vidUrl &amp;&amp; !work.vidUrl.includes('youtube') ? `&lt;a href="${work.vidUrl}" target="_blank" class="flex-1 text-center py-3 bg-blue-50 text-blue-600 text-sm font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5"&gt;&lt;i data-lucide="external-link" class="w-4 h-4"&gt;&lt;/i&gt; เปิดลิงก์&lt;/a&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; AOS.refresh(), 100);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- ระบบหลังบ้าน แอดมิน (Admin Handlers) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveGeneralData(type) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const content = type === 'profile' ? quillProfile.root.innerHTML : quillWorkload.root.innerHTML;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showLoading('กำลังบันทึกข้อมูล...');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(type==='profile') { gData.profile = content; document.getElementById('profile-content').innerHTML = content; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>else { gData.workload = content; document.getElementById('workload-content').innerHTML = content; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof google !== 'undefined' &amp;&amp; google.script) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>google.script.run</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.withSuccessHandler(() =&gt; { hideLoading(); alert('✅ บันทึกข้อมูลสำเร็จ!'); })</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.withFailureHandler(err =&gt; { hideLoading(); alert('❌ เกิดข้อผิดพลาดในการบันทึก: ' + err.message); })</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.saveGeneralInfo(type, content);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else { setTimeout(() =&gt; hideLoading(), 500); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderAdminEvalList() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const tbody = document.getElementById('admin-eval-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(evalData.length === 0) { tbody.innerHTML = `&lt;tr&gt;&lt;td colspan="4" class="text-center p-10 text-slate-400 font-medium"&gt;ยังไม่มีข้อมูลสไลด์นำเสนอ&lt;/td&gt;&lt;/tr&gt;`; return; }</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let html = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sorted = [...evalData].sort((a,b) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(a.category !== b.category) return a.category.localeCompare(b.category);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return a.title.localeCompare(b.title, undefined, {numeric: true});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>sorted.forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isCat1 = item.category.includes('1');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;tr class="hover:bg-slate-50 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="p-5"&gt;&lt;span class="${isCat1?'bg-emerald-100 text-emerald-700':'bg-blue-100 text-blue-700'} text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap"&gt;${item.category.substring(0,9)}&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="p-5 font-bold text-slate-800"&gt;&lt;div class="line-clamp-2"&gt;${item.title}&lt;/div&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="p-5 text-sm text-slate-500 font-medium"&gt;&lt;div class="line-clamp-2 leading-relaxed"&gt;${item.content.replace(/&lt;[^&gt;]*&gt;?/gm, '')}&lt;/div&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;td class="p-5 text-center whitespace-nowrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="openEvalForm('${item.id}')" class="p-2.5 text-blue-600 bg-blue-50 rounded-xl hover:bg-blue-600 hover:text-white transition-colors shadow-sm"&gt;&lt;i data-lucide="edit-2" class="w-4 h-4"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="deleteEval('${item.id}')" class="p-2.5 text-red-500 bg-red-50 rounded-xl hover:bg-red-500 hover:text-white transition-colors shadow-sm"&gt;&lt;i data-lucide="trash-2" class="w-4 h-4"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tbody.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openEvalForm(id = null) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>openModal('eval-modal');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(id) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const item = evalData.find(e =&gt; e.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-modal-title').innerHTML = '&lt;div class="bg-white p-2 rounded-lg shadow-sm text-brand-primary border border-gray-200"&gt;&lt;i data-lucide="edit-3" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt; แก้ไขสไลด์นำเสนอ';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-id').value = item.id;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-category').value = item.category;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-title').value = item.title;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quillEval.root.innerHTML = item.content;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-modal-title').innerHTML = '&lt;div class="bg-white p-2 rounded-lg shadow-sm text-brand-primary border border-gray-200"&gt;&lt;i data-lucide="plus-circle" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt; เพิ่มสไลด์ใหม่';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-id').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-category').value = 'ด้านที่ 1 การปฏิบัติตน';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('eval-title').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quillEval.root.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveEvalData() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const id = document.getElementById('eval-id').value || Date.now().toString();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const data = { id, category: document.getElementById('eval-category').value, title: document.getElementById('eval-title').value.trim(), content: quillEval.root.innerHTML };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!data.title) { alert('กรุณาระบุชื่อหัวข้อ'); return; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const idx = evalData.findIndex(e =&gt; e.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(idx &gt;= 0) evalData[idx] = data; else evalData.push(data);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderAdminEvalList();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeModal('eval-modal');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof google !== 'undefined' &amp;&amp; google.script) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showLoading('กำลังบันทึกข้อมูล...');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>google.script.run</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.withSuccessHandler(() =&gt; { hideLoading(); alert('✅ บันทึกสไลด์เรียบร้อย!'); })</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.withFailureHandler(err =&gt; { hideLoading(); alert('❌ เกิดข้อผิดพลาด: ' + err.message); })</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.saveEvalSlide(data);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function deleteEval(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!confirm('ยืนยันการลบสไลด์นี้? ข้อมูลจะไม่สามารถกู้คืนได้')) return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>evalData = evalData.filter(e =&gt; e.id !== id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderAdminEvalList();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof google !== 'undefined' &amp;&amp; google.script) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showLoading('กำลังลบข้อมูล...');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>google.script.run.withSuccessHandler(() =&gt; hideLoading()).deleteEvalSlide(id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderAdminWorksGrid() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('admin-works-grid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(worksData.length === 0) { container.innerHTML = `&lt;div class="col-span-full p-10 text-center text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200 font-medium"&gt;ยังไม่มีข้อมูลผลงานในระบบ&lt;/div&gt;`; return; }</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let html = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>worksData.forEach(w =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 border border-slate-200 rounded-3xl shadow-soft flex flex-col hover:shadow-lg transition-all group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-extrabold text-slate-800 line-clamp-1 mb-2 group-hover:text-brand-primary transition-colors"&gt;${w.title}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-500 line-clamp-2 mb-5 flex-1 font-medium"&gt;${w.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-center border-t border-slate-100 pt-4 mt-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-2 text-slate-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${w.imgUrl ? `&lt;div class="bg-emerald-50 p-1.5 rounded-lg"&gt;&lt;i data-lucide="image" class="w-4 h-4 text-emerald-500"&gt;&lt;/i&gt;&lt;/div&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${w.pdfUrl ? `&lt;div class="bg-red-50 p-1.5 rounded-lg"&gt;&lt;i data-lucide="file-text" class="w-4 h-4 text-red-500"&gt;&lt;/i&gt;&lt;/div&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${w.vidUrl ? `&lt;div class="bg-pink-50 p-1.5 rounded-lg"&gt;&lt;i data-lucide="youtube" class="w-4 h-4 text-pink-500"&gt;&lt;/i&gt;&lt;/div&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-1.5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="openWorkForm('${w.id}')" class="p-2 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg transition-colors shadow-sm"&gt;&lt;i data-lucide="edit-2" class="w-4 h-4"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="deleteWork('${w.id}')" class="p-2 text-red-500 hover:bg-red-500 hover:text-white rounded-lg transition-colors shadow-sm"&gt;&lt;i data-lucide="trash-2" class="w-4 h-4"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openWorkForm(id = null) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>openModal('work-modal');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(id) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const w = worksData.find(x =&gt; x.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-modal-title').innerHTML = '&lt;div class="bg-white p-2 rounded-lg shadow-sm text-amber-500 border border-gray-200"&gt;&lt;i data-lucide="edit-3" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt; แก้ไขผลงาน';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-id').value = w.id;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-title').value = w.title;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-desc').value = w.desc;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-img').value = w.imgUrl;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-pdf').value = w.pdfUrl;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-vid').value = w.vidUrl;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-modal-title').innerHTML = '&lt;div class="bg-white p-2 rounded-lg shadow-sm text-amber-500 border border-gray-200"&gt;&lt;i data-lucide="bookmark-plus" class="w-6 h-6"&gt;&lt;/i&gt;&lt;/div&gt; เพิ่มผลงานใหม่';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-id').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-title').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-desc').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-img').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-pdf').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('work-vid').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveWorkData() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const id = document.getElementById('work-id').value || Date.now().toString();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const data = { id, title: document.getElementById('work-title').value.trim(), desc: document.getElementById('work-desc').value.trim(), imgUrl: document.getElementById('work-img').value.trim(), pdfUrl: document.getElementById('work-pdf').value.trim(), vidUrl: document.getElementById('work-vid').value.trim() };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!data.title) { alert('กรุณาระบุชื่อผลงาน'); return; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const idx = worksData.findIndex(w =&gt; w.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(idx &gt;= 0) worksData[idx] = data; else worksData.unshift(data);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderAdminWorksGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderPortfolioGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeModal('work-modal');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof google !== 'undefined' &amp;&amp; google.script) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showLoading('กำลังบันทึกผลงาน...');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>google.script.run</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.withSuccessHandler(() =&gt; { hideLoading(); alert('✅ เพิ่มผลงานสำเร็จ!'); })</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.withFailureHandler(err =&gt; { hideLoading(); alert('❌ เกิดข้อผิดพลาด: ' + err.message); })</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.saveWorkItem(data);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function deleteWork(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!confirm('ยืนยันการลบผลงานนี้?')) return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>worksData = worksData.filter(w =&gt; w.id !== id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderAdminWorksGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderPortfolioGrid();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (typeof google !== 'undefined' &amp;&amp; google.script) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showLoading('กำลังลบข้อมูล...');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>google.script.run.withSuccessHandler(() =&gt; hideLoading()).deleteWorkItem(id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- รันเมื่อเว็บไซต์โหลดเสร็จ ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('DOMContentLoaded', loadAllData);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
