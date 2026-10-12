@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;padding:20px;background:#F3F6FB;color:#172B4D;font:14px Arial,Tahoma,sans-serif}
+    .card{max-width:760px;margin:auto;background:#fff;border-radius:18px;padding:22px;box-shadow:0 12px 34px rgba(20,45,85,.10)}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:1.2px;color:#3478F6;margin-bottom:7px}
+    h1{font-size:22px;margin:0 0 7px;color:#173A72}
+    .sub{font-size:13px;line-height:1.7;color:#667085;margin-bottom:18px}
+    label{display:block;font-size:13px;font-weight:700;margin:14px 0 7px}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #D0D9E8;border-radius:10px;background:#fff;color:#172B4D;font:inherit;font-size:13px}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:#3478F6;box-shadow:0 0 0 3px rgba(52,120,246,.12)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .hint{font-size:12px;color:#667085;line-height:1.65;margin-top:7px}
+    .pill{display:inline-block;padding:5px 9px;background:#EDF3FF;color:#2458B8;border-radius:999px;font-size:11px;font-weight:700}
+    .divider{height:1px;background:#E6EBF3;margin:20px 0}
+    details{border:1px solid #DCE5F2;border-radius:12px;padding:14px;background:#FAFBFE}
+    summary{cursor:pointer;color:#173A72;font-weight:700;font-size:14px}
+    button{border:0;border-radius:10px;padding:12px 14px;cursor:pointer;font-size:13px;font-weight:700}
+    button:disabled{opacity:.55;cursor:wait}
+    .primary{background:#173A72;color:#fff;width:100%}
+    .secondary{background:#E8EEF8;color:#173A72;width:100%}
+    .save{background:#E6F5EA;color:#17663A;width:100%}
+    .actions{display:flex;gap:10px;margin-top:16px}
+    #status{margin-top:14px;white-space:pre-wrap;font-size:13px;line-height:1.65}
+    .success{color:#15803D}.error{color:#B42318}.working{color:#175CD3}
+    .result{display:none;margin-top:16px;padding:15px;border:1px solid #C8D9F6;background:#F5F8FF;border-radius:13px}
+    .result-title{font-size:14px;font-weight:700;color:#173A72;margin-bottom:8px}
+    .url{display:block;overflow-wrap:anywhere;font-size:12px;line-height:1.65;color:#175CD3;margin:8px 0 12px}
+    .result-actions{display:flex;gap:9px;flex-wrap:wrap}
+    .open{display:inline-block;background:#173A72;color:#fff;text-decoration:none;text-align:center;border-radius:9px;padding:11px 13px;font-size:13px;font-weight:700}
+    .copy{background:#E7EDF7;color:#173A72}
+    .tiny{font-size:11px;color:#98A2B3;line-height:1.6;margin-top:13px}
+    @media(max-width:560px){body{padding:9px}.card{padding:16px}.grid{grid-template-columns:1fr;gap:0}.actions{flex-direction:column}h1{font-size:20px}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">MVSK · ACADEMIC+</div>
+    <h1>สร้างลิงก์รายชื่อนักเรียน</h1>
+    <div class="sub">พิมพ์เลขห้องเพื่อสร้างลิงก์ PDF รายชื่อจาก Academic+ โดยระบบจะจำรหัสห้องภายในไว้ในชีต <b>RosterRoomMap</b> หลังตั้งค่าห้องครั้งแรกแล้ว ไม่ต้องหา ID ใหม่ทุกครั้ง</div>
+
+    <label for="course">1. เลือกรายวิชา</label>
+    <select id="course" onchange="updateRoomHints()"></select>
+
+    <div class="grid">
+      <div>
+        <label for="targetRoom">2. พิมพ์ห้องที่ต้องการ</label>
+        <input id="targetRoom" list="roomOptions" value="6/17" placeholder="เช่น 6/17 หรือ ม.6/17" oninput="updateMappingStatus()">
+        <datalist id="roomOptions"></datalist>
+        <div id="roomHint" class="hint"></div>
+      </div>
+      <div>
+        <label>รหัสห้องในระบบ</label>
+        <div id="mappingStatus" class="hint" style="padding:12px;border-radius:10px;background:#F5F7FB;min-height:43px">กำลังตรวจสอบ...</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="createBtn" type="button" class="primary" onclick="createLink()">สร้างลิงก์รายชื่อ</button>
+    </div>
+
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="result" class="result">
+      <div class="result-title" id="resultTitle">ลิงก์รายชื่อพร้อมเปิด</div>
+      <a id="urlLink" class="url" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <textarea id="copyBuffer" aria-label="URL สำหรับคัดลอก" style="position:absolute;left:-9999px;top:-9999px"></textarea>
+      <div class="result-actions">
+        <a id="openLink" class="open" href="#" target="_blank" rel="noopener noreferrer">เปิดหน้า PDF รายชื่อ</a>
+        <button class="copy" type="button" onclick="copyLink()">คัดลอกลิงก์</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <details id="mappingDetails">
+      <summary>ห้องใหม่ / บันทึก URL ของห้องนี้ครั้งแรก</summary>
+      <div class="hint">หากระบบยังไม่รู้จักห้อง ให้เปิด Academic+ ของห้องนั้น แล้วคัดลอก URL จากหน้า <b>print-pdf</b> มาใส่ด้านล่าง ระบบจะอ่าน <b>year</b>, <b>id_classyear</b> และ <b>id_rooms</b> แล้วจำไว้ใน RosterRoomMap</div>
+      <label for="mappingRoom">ห้องที่ URL นี้เป็นของห้องนั้น</label>
+      <input id="mappingRoom" value="6/17" placeholder="เช่น 5/4">
+      <label for="sourceUrl">URL รายชื่อจาก Academic+ (ลิงก์จริงของห้องนั้น)</label>
+      <input id="sourceUrl" type="url" value="https://academic.mvsk.ac.th/pretest/print-pdf?year=2569&id_classyear=6&id_rooms=7" placeholder="https://academic.mvsk.ac.th/pretest/print-pdf?year=2569&id_classyear=...&id_rooms=...">
+      <div class="hint">URL ที่ให้มาถูกใส่เป็นตัวอย่างไว้แล้ว: <b>year=2569, id_classyear=6, id_rooms=7</b> และตั้งต้นจับคู่กับห้อง 6/17 ตามบริบทที่คุยกัน หากลิงก์นี้เป็นห้องอื่น ให้แก้ช่องห้องก่อนบันทึก</div>
+      <div class="actions">
+        <button id="saveMapBtn" type="button" class="save" onclick="saveMapping()">บันทึกรหัสห้องนี้</button>
+      </div>
+    </details>
+
+    <div class="tiny">ข้อควรทราบ: ลิงก์ Academic+ อาจพาไปหน้าเข้าสู่ระบบ หากยังไม่ได้เข้าสู่ระบบด้วยบัญชีครู @mvsk.ac.th ต้องลงชื่อเข้าใช้ก่อน ระบบนี้สร้างลิงก์เท่านั้น ไม่ได้ข้ามระบบยืนยันตัวตนหรือดึงข้อมูลจากเว็บไซต์</div>
+  </main>
+
+  <script>
+    let appData = {courses: [], mappings: {}, template: ''};
+    let latestUrl = '';
+
+    function setStatus(message, type) {
+      const el = document.getElementById('status');
+      el.className = type || '';
+      el.textContent = message || '';
+    }
+    function normalizeRoom(value) {
+      return String(value || '').replace(/[\u200B-\u200D\uFEFF]/g, '')
+        .replace(/^\s*ม\s*\.\s*/i, '').replace(/\s+/g, '').trim().replace('-', '/');
+    }
+    function init() {
+      setStatus('กำลังโหลดรายวิชาและรหัสห้อง...', 'working');
+      google.script.run.withSuccessHandler(function(data) {
+        appData = data || {courses: [], mappings: {}, template: ''};
+        const select = document.getElementById('course');
+        select.innerHTML = '';
+        appData.courses.forEach(function(course) {
+          const option = document.createElement('option');
+          option.value = course.code;
+          option.textContent = course.code + ' — ' + course.subject;
+          select.appendChild(option);
+        });
+        const index = appData.courses.findIndex(c => c.rooms.includes('6/17'));
+        if (index >= 0) select.selectedIndex = index;
+        document.getElementById('mappingRoom').value = appData.defaultSampleRoom || '6/17';
+        document.getElementById('sourceUrl').value = appData.defaultSampleUrl || document.getElementById('sourceUrl').value;
+        updateRoomHints();
+        updateMappingStatus();
+        setStatus('พร้อมใช้งาน เลือกห้องแล้วกด “สร้างลิงก์รายชื่อ” ได้เลย', 'success');
+      }).withFailureHandler(function(error) {
+        setStatus('โหลดข้อมูลไม่สำเร็จ\n' + errorMessage(error) + '\nกรุณาเลือกเมนูตั้งค่าระบบ / สร้างชีตก่อน', 'error');
+      }).getRosterLinkBuilderData();
+    }
+    function updateRoomHints() {
+      const course = appData.courses.find(c => c.code === document.getElementById('course').value);
+      const datalist = document.getElementById('roomOptions');
+      datalist.innerHTML = '';
+      if (!course) return;
+      course.rooms.forEach(function(room) {
+        const option = document.createElement('option');
+        option.value = room;
+        datalist.appendChild(option);
+      });
+      document.getElementById('roomHint').textContent = 'ห้องของวิชานี้: ' + course.rooms.join(', ');
+      updateMappingStatus();
+    }
+    function updateMappingStatus() {
+      const room = normalizeRoom(document.getElementById('targetRoom').value);
+      const mapping = appData.mappings && appData.mappings[room];
+      const el = document.getElementById('mappingStatus');
+      if (mapping) {
+        el.textContent = 'บันทึกแล้ว ✓  ID ห้อง: ' + mapping.roomId + ' · ปี ' + mapping.year;
+        el.style.color = '#17663A';
+        el.style.background = '#EAF7EE';
+      } else {
+        el.textContent = 'ยังไม่บันทึก ID ของห้องนี้';
+        el.style.color = '#9A3412';
+        el.style.background = '#FFF4E5';
+      }
+    }
+    function createLink() {
+      const btn = document.getElementById('createBtn');
+      btn.disabled = true;
+      btn.textContent = 'กำลังสร้างลิงก์...';
+      document.getElementById('result').style.display = 'none';
+      setStatus('กำลังค้นหารหัสห้องที่บันทึกไว้...', 'working');
+      const payload = {
+        courseCode: document.getElementById('course').value,
+        targetRoom: document.getElementById('targetRoom').value
+      };
+      google.script.run.withSuccessHandler(function(result) {
+        btn.disabled = false;
+        btn.textContent = 'สร้างลิงก์รายชื่อ';
+        showResult(result.url, 'ลิงก์รายชื่อพร้อมเปิด — ' + result.room);
+        setStatus('สร้างลิงก์สำเร็จ\nรายวิชา: ' + result.course + '\nห้อง: ' + result.room + '\nรหัส Academic+ ถูกอ่านจาก RosterRoomMap', 'success');
+      }).withFailureHandler(function(error) {
+        btn.disabled = false;
+        btn.textContent = 'สร้างลิงก์รายชื่อ';
+        setStatus('สร้างลิงก์ไม่สำเร็จ\n' + errorMessage(error), 'error');
+      }).createRosterLink(payload);
+    }
+    function saveMapping() {
+      const btn = document.getElementById('saveMapBtn');
+      btn.disabled = true;
+      btn.textContent = 'กำลังบันทึก...';
+      setStatus('กำลังอ่านพารามิเตอร์จาก URL...', 'working');
+      const payload = {
+        room: document.getElementById('mappingRoom').value,
+        sourceUrl: document.getElementById('sourceUrl').value.trim()
+      };
+      google.script.run.withSuccessHandler(function(result) {
+        btn.disabled = false;
+        btn.textContent = 'บันทึกรหัสห้องนี้';
+        appData.mappings[normalizeRoom(payload.room)] = result.mapping;
+        document.getElementById('targetRoom').value = normalizeRoom(payload.room);
+        updateRoomHints();
+        updateMappingStatus();
+        showResult(result.url, 'บันทึกลิงก์สำเร็จ — ' + result.room);
+        setStatus('บันทึก mapping สำเร็จ\nห้อง: ' + result.room + '\nid_classyear: ' + result.mapping.gradeId + '\nid_rooms: ' + result.mapping.roomId + '\nครั้งต่อไปเลือกห้องนี้แล้วกดสร้างลิงก์ได้ทันที', 'success');
+      }).withFailureHandler(function(error) {
+        btn.disabled = false;
+        btn.textContent = 'บันทึกรหัสห้องนี้';
+        setStatus('บันทึกไม่สำเร็จ\n' + errorMessage(error), 'error');
+      }).saveRosterRoomMapping(payload);
+    }
+    function showResult(url, title) {
+      latestUrl = url;
+      document.getElementById('resultTitle').textContent = title;
+      const link = document.getElementById('urlLink');
+      link.href = url; link.textContent = url;
+      document.getElementById('openLink').href = url;
+      document.getElementById('copyBuffer').value = url;
+      document.getElementById('result').style.display = 'block';
+    }
+    function copyLink() {
+      if (!latestUrl) return;
+      const buffer = document.getElementById('copyBuffer');
+      buffer.value = latestUrl;
+      buffer.style.position = 'fixed'; buffer.style.left = '0'; buffer.style.top = '0';
+      buffer.select();
+      let success = false;
+      try { success = document.execCommand('copy'); } catch (e) { success = false; }
+      buffer.style.position = 'absolute'; buffer.style.left = '-9999px';
+      setStatus(success ? 'คัดลอกลิงก์แล้ว สามารถนำไปวางได้เลย' : 'คัดลอกอัตโนมัติไม่ได้ กรุณาเลือก URL แล้วกด Ctrl+C', success ? 'success' : '');
+    }
+    function errorMessage(error) { return error && error.message ? error.message : String(error || 'เกิดข้อผิดพลาด'); }
+    window.addEventListener('load', init);
+  </script>
+</body>
+</html>
