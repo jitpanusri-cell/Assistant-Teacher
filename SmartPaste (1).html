@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; padding:22px; font-family:Arial,Tahoma,sans-serif; color:#172B4D; background:#F4F7FC; }
+    .card { background:#FFF; border-radius:16px; padding:22px; box-shadow:0 6px 24px rgba(23,58,114,.08); }
+    .title { font-size:21px; font-weight:700; margin:0 0 7px; color:#173A72; }
+    .sub { color:#667085; font-size:13px; line-height:1.6; margin-bottom:18px; }
+    label { display:block; font-weight:600; margin:15px 0 7px; font-size:13px; }
+    select,textarea { width:100%; padding:11px 12px; border:1px solid #D0D9E8; border-radius:9px; background:#FFF; font:inherit; font-size:13px; outline:none; }
+    select:focus,textarea:focus { border-color:#3478F6; box-shadow:0 0 0 3px rgba(52,120,246,.12); }
+    textarea { height:215px; resize:vertical; line-height:1.5; }
+    .hint { margin-top:7px; font-size:12px; color:#667085; line-height:1.6; }
+    .actions { display:flex; gap:10px; margin-top:18px; }
+    button { border:0; border-radius:9px; padding:12px 14px; cursor:pointer; font-size:13px; font-weight:700; }
+    .primary { flex:1; color:#FFF; background:#173A72; }
+    .secondary { color:#344054; background:#EAEEF5; }
+    button:disabled { opacity:.55; cursor:wait; }
+    #status { margin-top:15px; white-space:pre-wrap; font-size:13px; line-height:1.7; }
+    .success { color:#15803D; } .error { color:#B42318; } .working { color:#175CD3; }
+    .foot { margin-top:12px; font-size:11px; color:#98A2B3; line-height:1.5; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">Smart Paste</div>
+    <div class="sub">วางข้อความที่คัดลอกจากหน้าเว็บโรงเรียน ระบบจะค้นหาห้องเรียน แยกเลขที่ รหัสนักเรียน 5 หลัก และชื่อ-นามสกุล แล้วสร้างชีตห้องเรียนอัตโนมัติ</div>
+    <label for="course">1. เลือกรายวิชา</label>
+    <select id="course">
+      <option value="ส32103">ส32103 — สังคมศึกษา 4</option>
+      <option value="ส33265">ส33265 — เหตุการณ์ปัจจุบัน 2</option>
+      <option value="ส23262">ส23262 — มหาวชิราวุธศึกษา 2</option>
+    </select>
+    <label for="raw">2. วางข้อความรายชื่อนักเรียน</label>
+    <textarea id="raw" placeholder="วางข้อความที่คัดลอกจากเว็บไซต์โรงเรียนที่นี่..."></textarea>
+    <div class="hint">ระบบค้นหาห้องจากข้อความ เช่น <b>ม.5/17</b><br>รูปแบบระเบียน: เลขที่ 1–2 หลัก + เลขประจำตัว 5 หลัก + เด็กชาย/เด็กหญิง/นาย/นางสาว + ชื่อ</div>
+    <div class="actions">
+      <button class="secondary" type="button" onclick="clearInput()">ล้างข้อความ</button>
+      <button id="submitBtn" class="primary" type="button" onclick="submitImport()">ตรวจสอบและนำเข้า</button>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div class="foot">ระบบจะเก็บรายชื่อนักเรียนเดิมไว้ และอัปเดตชื่อ/เลขที่ตามรหัสนักเรียนที่ตรงกัน โปรดตรวจสอบชีตหลังนำเข้า</div>
+  </div>
+  <script>
+    function clearInput() { document.getElementById('raw').value=''; setStatus('',''); }
+    function setStatus(message,type) { const el=document.getElementById('status'); el.className=type||''; el.textContent=message; }
+    function submitImport() {
+      const rawText=document.getElementById('raw').value;
+      const courseCode=document.getElementById('course').value;
+      const btn=document.getElementById('submitBtn');
+      if(!rawText.trim()) { setStatus('กรุณาวางข้อความรายชื่อนักเรียนก่อน','error'); return; }
+      btn.disabled=true; btn.textContent='กำลังตรวจสอบ...';
+      setStatus('กำลังแยกข้อมูลและตรวจสอบรายชื่อ กรุณารอสักครู่','working');
+      google.script.run
+        .withSuccessHandler(function(result) {
+          btn.disabled=false; btn.textContent='ตรวจสอบและนำเข้า';
+          setStatus('นำเข้าสำเร็จ\nรายวิชา: '+result.course+'\nห้องเรียน: '+result.room+'\nชื่อชีต: '+result.sheetName+'\nรายชื่อที่อ่านจากข้อความ: '+result.imported+' คน\nรายชื่อทั้งหมดในชีต: '+result.totalInSheet+' คน\n\nกรุณาเปิดชีตห้องเรียนเพื่อตรวจสอบชื่อและเลขประจำตัว','success');
+        })
+        .withFailureHandler(function(error) {
+          btn.disabled=false; btn.textContent='ตรวจสอบและนำเข้า';
+          setStatus('นำเข้าไม่สำเร็จ\n'+(error&&error.message?error.message:String(error)),'error');
+        })
+        .importStudentList(rawText,courseCode);
+    }
+  </script>
+</body>
+</html>
