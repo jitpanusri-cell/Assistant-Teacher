@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; padding:20px; font-family:Arial,Tahoma,sans-serif; color:#172B4D; background:#F4F7FC; }
+    .card { background:#fff; border-radius:16px; padding:22px; box-shadow:0 6px 24px rgba(23,58,114,.08); }
+    h1 { margin:0 0 8px; font-size:22px; color:#173A72; }
+    .sub { color:#667085; font-size:13px; line-height:1.65; margin-bottom:18px; }
+    label { display:block; font-size:13px; font-weight:700; margin:14px 0 7px; }
+    input, select { width:100%; padding:11px 12px; border:1px solid #D0D9E8; border-radius:9px; background:#fff; color:#172B4D; font:inherit; font-size:13px; }
+    input:focus, select:focus { outline:none; border-color:#3478F6; box-shadow:0 0 0 3px rgba(52,120,246,.12); }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .hint { font-size:12px; color:#667085; line-height:1.6; margin-top:7px; }
+    details { margin-top:16px; border:1px solid #E4EAF3; padding:12px; border-radius:10px; background:#FAFBFE; }
+    summary { cursor:pointer; font-size:13px; font-weight:700; color:#344054; }
+    .actions { display:flex; gap:10px; margin-top:18px; }
+    button { border:0; border-radius:9px; padding:12px 14px; cursor:pointer; font-size:13px; font-weight:700; }
+    button:disabled { opacity:.55; cursor:wait; }
+    .primary { flex:1; color:#fff; background:#173A72; }
+    .secondary { color:#344054; background:#EAEEF5; }
+    #status { margin-top:15px; white-space:pre-wrap; font-size:13px; line-height:1.65; }
+    .success { color:#15803D; } .error { color:#B42318; } .working { color:#175CD3; }
+    .result { display:none; margin-top:16px; padding:14px; border:1px solid #D9E6FB; background:#F5F8FF; border-radius:12px; }
+    .result-title { color:#173A72; font-weight:700; margin-bottom:8px; font-size:14px; }
+    .url { display:block; overflow-wrap:anywhere; color:#175CD3; font-size:12px; line-height:1.6; margin:8px 0 12px; }
+    .result-actions { display:flex; gap:8px; flex-wrap:wrap; }
+    .open { background:#173A72; color:#fff; text-decoration:none; text-align:center; border-radius:8px; padding:11px 13px; font-size:13px; font-weight:700; }
+    .copy { background:#E7EDF7; color:#173A72; }
+    .small { font-size:11px; color:#98A2B3; line-height:1.5; margin-top:14px; }
+    @media (max-width:540px) { body { padding:10px; } .card { padding:16px; } .grid { grid-template-columns:1fr; gap:0; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>สร้างลิงก์รายชื่อนักเรียน</h1>
+    <div class="sub">เลือกวิชา พิมพ์เลขห้อง แล้วให้ระบบสร้างลิงก์ไปยังหน้าเว็บรายชื่อของโรงเรียนได้ โดยตั้งค่า URL ต้นทางเพียงครั้งแรก ระบบจะบันทึกแม่แบบไว้ในชีต Config</div>
+
+    <label for="course">1. รายวิชา</label>
+    <select id="course" onchange="updateRoomHints()"></select>
+
+    <div class="grid">
+      <div>
+        <label for="targetRoom">2. ห้องที่ต้องการเปิด</label>
+        <input id="targetRoom" list="roomOptions" value="5/4" placeholder="เช่น 5/17">
+        <datalist id="roomOptions"></datalist>
+        <div id="roomHint" class="hint"></div>
+      </div>
+      <div>
+        <label for="savedStatus">สถานะแม่แบบ URL</label>
+        <input id="savedStatus" value="กำลังตรวจสอบ..." readonly>
+        <div class="hint">แม่แบบจะเก็บใน Config!B8 และใช้ร่วมกันทุกครั้ง</div>
+      </div>
+    </div>
+
+    <details id="setupDetails" open>
+      <summary>ตั้งค่าแหล่งที่มาครั้งแรก (จำเป็นถ้ายังไม่เคยตั้งค่า)</summary>
+      <label for="sampleUrl">URL ตัวอย่างจากหน้าเว็บโรงเรียน</label>
+      <input id="sampleUrl" type="url" placeholder="วางลิงก์หน้าเว็บรายชื่อนักเรียนของห้องตัวอย่าง">
+      <div class="grid">
+        <div>
+          <label for="sampleRoom">ห้องของ URL ตัวอย่าง</label>
+          <input id="sampleRoom" value="5/17" placeholder="เช่น 5/17">
+        </div>
+        <div>
+          <label for="manualTemplate">แม่แบบ URL (กรณีต้องกำหนดเอง)</label>
+          <input id="manualTemplate" placeholder="https://school.example/list?class={CLASS}">
+        </div>
+      </div>
+      <div class="hint">
+        ระบบจะพยายามแทนเลขห้องใน URL ตัวอย่างให้อัตโนมัติ หากไม่พบเลขห้อง ให้กำหนดแม่แบบ URL เองโดยใช้ตัวแปร เช่น <b>{CLASS}</b> = 5/17, <b>{M_CLASS}</b> = ม.5/17, <b>{GRADE}</b> = 5, <b>{ROOM}</b> = 17 หรือ <b>{CLASS_ENC}</b> = 5%2F17
+      </div>
+    </details>
+
+    <div class="actions">
+      <button class="secondary" type="button" onclick="clearResult()">ล้างผลลัพธ์</button>
+      <button id="createBtn" class="primary" type="button" onclick="createLink()">สร้างลิงก์รายชื่อ</button>
+    </div>
+
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="result" class="result">
+      <div class="result-title" id="resultTitle">ลิงก์รายชื่อพร้อมเปิด</div>
+      <a id="urlLink" class="url" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <textarea id="copyBuffer" aria-label="URL สำหรับคัดลอก" style="position:absolute;left:-9999px;top:-9999px"></textarea>
+      <div class="result-actions">
+        <a id="openLink" class="open" href="#" target="_blank" rel="noopener noreferrer">เปิดหน้าเว็บรายชื่อ</a>
+        <button class="copy" type="button" onclick="copyLink()">คัดลอกลิงก์</button>
+      </div>
+    </div>
+
+    <div class="small">หมายเหตุ: ต้องใช้ URL จากหน้าเว็บรายชื่อนักเรียนจริงของโรงเรียน ไม่ใช่ URL ของ Apps Script นี้ ระบบไม่ดึงข้อมูลจากเว็บและไม่ใช้ UrlFetch เพียงช่วยสร้างลิงก์สำหรับเปิดหน้าเว็บเดิม</div>
+  </div>
+
+  <script>
+    let appData = { courses: [], template: '' };
+    let latestUrl = '';
+
+    function setStatus(message, type) {
+      const el = document.getElementById('status');
+      el.className = type || '';
+      el.textContent = message || '';
+    }
+
+    function init() {
+      setStatus('กำลังโหลดรายวิชาและค่า URL ที่บันทึกไว้...', 'working');
+      google.script.run
+        .withSuccessHandler(function(data) {
+          appData = data || {courses: [], template: ''};
+          const select = document.getElementById('course');
+          select.innerHTML = '';
+          appData.courses.forEach(function(course) {
+            const option = document.createElement('option');
+            option.value = course.code;
+            option.textContent = course.code + ' — ' + course.subject;
+            select.appendChild(option);
+          });
+          document.getElementById('savedStatus').value = appData.template ? 'ตั้งค่าแล้ว ✓' : 'ยังไม่ได้ตั้งค่า';
+          document.getElementById('setupDetails').open = !appData.template;
+          updateRoomHints();
+          setStatus(appData.template ? 'พบแม่แบบ URL เดิมแล้ว ครั้งต่อไปพิมพ์ห้องแล้วกดสร้างลิงก์ได้เลย' : 'ครั้งแรก: วาง URL ตัวอย่างของหน้าเว็บรายชื่อนักเรียน แล้วระบุว่าลิงก์นั้นเป็นของห้องใด', appData.template ? 'success' : '');
+        })
+        .withFailureHandler(function(error) {
+          setStatus('โหลดค่าเริ่มต้นไม่สำเร็จ\n' + errorMessage(error) + '\nกรุณารัน “ตั้งค่าระบบ / สร้างชีต” ก่อน', 'error');
+        })
+        .getRosterLinkBuilderData();
+    }
+
+    function updateRoomHints() {
+      const courseCode = document.getElementById('course').value;
+      const course = appData.courses.find(c => c.code === courseCode);
+      const datalist = document.getElementById('roomOptions');
+      datalist.innerHTML = '';
+      if (!course) return;
+      course.rooms.forEach(function(room) {
+        const option = document.createElement('option');
+        option.value = room;
+        datalist.appendChild(option);
+      });
+      document.getElementById('roomHint').textContent = 'ห้องที่ตั้งไว้สำหรับวิชานี้: ' + course.rooms.join(', ');
+      if (!document.getElementById('targetRoom').value && course.rooms.length) {
+        document.getElementById('targetRoom').value = course.rooms[0];
+      }
+    }
+
+    function createLink() {
+      const btn = document.getElementById('createBtn');
+      const payload = {
+        courseCode: document.getElementById('course').value,
+        targetRoom: document.getElementById('targetRoom').value,
+        sampleUrl: document.getElementById('sampleUrl').value.trim(),
+        sampleRoom: document.getElementById('sampleRoom').value.trim(),
+        manualTemplate: document.getElementById('manualTemplate').value.trim()
+      };
+      btn.disabled = true;
+      btn.textContent = 'กำลังสร้างลิงก์...';
+      document.getElementById('result').style.display = 'none';
+      setStatus('กำลังตรวจสอบห้องและสร้าง URL...', 'working');
+
+      google.script.run
+        .withSuccessHandler(function(result) {
+          btn.disabled = false;
+          btn.textContent = 'สร้างลิงก์รายชื่อ';
+          latestUrl = result.url;
+          document.getElementById('urlLink').href = result.url;
+          document.getElementById('urlLink').textContent = result.url;
+          document.getElementById('openLink').href = result.url;
+          document.getElementById('resultTitle').textContent = 'ลิงก์รายชื่อพร้อมเปิด — ' + result.room;
+          document.getElementById('copyBuffer').value = result.url;
+          document.getElementById('result').style.display = 'block';
+          document.getElementById('savedStatus').value = 'ตั้งค่าแล้ว ✓';
+          appData.template = result.template;
+          setStatus('สร้างลิงก์สำเร็จ\nรายวิชา: ' + result.course + '\nห้อง: ' + result.room + '\nบันทึกแม่แบบไว้ที่ Config!B8 แล้ว', 'success');
+        })
+        .withFailureHandler(function(error) {
+          btn.disabled = false;
+          btn.textContent = 'สร้างลิงก์รายชื่อ';
+          setStatus('สร้างลิงก์ไม่สำเร็จ\n' + errorMessage(error), 'error');
+        })
+        .createRosterLink(payload);
+    }
+
+    function copyLink() {
+      if (!latestUrl) return;
+      const buffer = document.getElementById('copyBuffer');
+      buffer.value = latestUrl;
+      buffer.style.position = 'fixed';
+      buffer.style.left = '0';
+      buffer.style.top = '0';
+      buffer.select();
+      let success = false;
+      try { success = document.execCommand('copy'); } catch (e) { success = false; }
+      buffer.style.position = 'absolute';
+      buffer.style.left = '-9999px';
+      if (success) {
+        setStatus('คัดลอกลิงก์แล้ว สามารถนำไปวางในเบราว์เซอร์ได้', 'success');
+      } else {
+        setStatus('คัดลอกอัตโนมัติไม่ได้ กรุณาเลือกและคัดลอก URL ที่แสดงด้านบน', '');
+      }
+    }
+
+    function clearResult() {
+      latestUrl = '';
+      document.getElementById('result').style.display = 'none';
+      setStatus('', '');
+    }
+
+    function errorMessage(error) {
+      return error && error.message ? error.message : String(error || 'เกิดข้อผิดพลาด');
+    }
+
+    window.addEventListener('load', init);
+  </script>
+</body>
+</html>
