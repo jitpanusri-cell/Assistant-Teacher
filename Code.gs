@@ -144,7 +144,7 @@ function applyClassFormulas_(sh,course){course=course||getCourseFromClassSheet_(
   sh.getRange('F2').setFormula('=ARRAYFORMULA(IF(A2:A="","",ROUND(D2:D+E2:E,0)))');
   sh.getRange('J2').setFormula('=ARRAYFORMULA(IF(A2:A="","",ROUND(H2:H+I2:I,0)))');
   sh.getRange('L2').setFormula('=ARRAYFORMULA(IF(A2:A="","",ROUND(F2:F,0)+ROUND(G2:G,0)+ROUND(J2:J,0)+ROUND(K2:K,0)))');
-  sh.getRange('M2').setFormula('=ARRAYFORMULA(IF(A2:A="","",IF(AE2:AE<>"",AE2:AE,IF(L2:L="","",IF(L2:L>=80,4,IF(L2:L>=75,3.5,IF(L2:L>=70,3,IF(L2:L>=65,2.5,IF(L2:L>=60,2,IF(L2:L>=55,1.5,IF(L2:L>=50,1,0))))))))))');
+  sh.getRange('M2').setFormula('=ARRAYFORMULA(IF(A2:A="","",IF(AE2:AE<>"",AE2:AE,IF(L2:L="","",IF(L2:L>=80,4,IF(L2:L>=75,3.5,IF(L2:L>=70,3,IF(L2:L>=65,2.5,IF(L2:L>=60,2,IF(L2:L>=55,1.5,IF(L2:L>=50,1,0)))))))))))');
   const q='=ARRAYFORMULA(IF(A2:A="","",IF(M2:M="","",IF(((M2:M=4)+(M2:M=3.5)+(M2:M=3)+(M2:M=2.5))>0,3,IF(((M2:M=2)+(M2:M=1.5)+(M2:M=1))>0,2,IF(((M2:M=0)+(M2:M="ร")+(M2:M="มส"))>0,1,"")))))';
   for(let c=14;c<=21;c++)sh.getRange(2,c).setFormula(q);
   sh.getRange('V2').setFormula('=ARRAYFORMULA(IF(A2:A="","",IF(M2:M="","",IF((N2:N>=2)*(O2:O>=2)*(P2:P>=2)*(Q2:Q>=2)*(R2:R>=2)*(S2:S>=2)*(T2:T>=2)*(U2:U>=2),"ผ่าน","ไม่ผ่าน"))))');
